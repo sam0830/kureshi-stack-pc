@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 95b401f84208356408a27584b871c1b1
+timeCreated: 1521270353
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: KAWAIITEGAKIMOJI
+  fontNames:
+  - KAWAIITEGAKIMOJI
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
