@@ -17,7 +17,13 @@ public class RotationSlider : SingletonMonoBehaviour<RotationSlider> {
 	}
 
 	private void Update() {
-		slider.value = SliderValue;
+		//slider.value = SliderValue;
+		if(Input.GetKey(KeyCode.Z)) {
+			slider.value -= 2f;
+		}
+		if(Input.GetKey(KeyCode.X)) {
+			slider.value += 2f;
+		}
 	}
 
 	public void OnValueChanged() {
