@@ -1648,6 +1648,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223528486402910296, guid: 846e0bc4a9d78c64b87d332f1c005727,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 828197979}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 846e0bc4a9d78c64b87d332f1c005727, type: 2}
   m_IsPrefabParent: 0
@@ -1942,6 +1947,7 @@ GameObject:
   - component: {fileID: 828197978}
   - component: {fileID: 828197977}
   - component: {fileID: 828197976}
+  - component: {fileID: 828197981}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -2019,6 +2025,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &828197981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 828197975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c25618e9f96484583d3f3bc5e2e564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aspect: {x: 750, y: 1344}
+  backgroundColor:
+    serializedVersion: 2
+    rgba: 4278190080
 --- !u!1 &828568902
 GameObject:
   m_ObjectHideFlags: 0

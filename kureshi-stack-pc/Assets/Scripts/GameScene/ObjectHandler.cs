@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Common;
 
 public class ObjectHandler : MonoBehaviour , InputGesture {
 	[SerializeField]
@@ -30,7 +31,33 @@ public class ObjectHandler : MonoBehaviour , InputGesture {
 	}
 
 	private void Update() {
-
+		if(GameSceneManager.Instance.ePlayType == GameSceneManager.PlayType.PAUSE) {
+			_isSelected = false;
+			return;
+		}
+		if(SequenceManager.Instance.ePhaseType != SequenceManager.PhaseType.USER) {
+			return;
+		}
+		if(this.gameObject.tag == Constant.STACKED_TAG_NAME) {
+			return;
+		}
+		Vector3 pos = this.transform.position;
+		float min = -2.85f;
+		float max = 2.85f;
+		if(Input.GetKey(KeyCode.RightArrow)) {
+			this.transform.position = new Vector3(
+				Mathf.Clamp(pos.x+0.1f, min, max),
+				pos.y,
+				pos.z
+			);
+		}
+		if(Input.GetKey(KeyCode.LeftArrow)) {
+			this.transform.position = new Vector3(
+				Mathf.Clamp(pos.x-0.1f, min, max),
+				pos.y,
+				pos.z
+			);
+		}
 	}
 
 	private void OnDrawGizmos() {
@@ -107,8 +134,10 @@ public class ObjectHandler : MonoBehaviour , InputGesture {
 		Vector3 pos = this.transform.position;
 		Vector3 diff = Camera.main.ScreenToWorldPoint (new Vector3(0,0,1.0f)) - Camera.main.ScreenToWorldPoint(info.DeltaPosition);
 		this.transform.position = new Vector3(pos.x-diff.x, pos.y, pos.z);
-		float min = Camera.main.ScreenToWorldPoint(new Vector3(0,0,0)).x;
-		float max = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,0,0)).x;
+		// float min = Camera.main.ScreenToWorldPoint(new Vector3(0,0,0)).x;
+		// float max = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,0,0)).x;
+		float min = -2.85f;
+		float max = 2.85f;
 		this.transform.position = new Vector3(
 			Mathf.Clamp(this.transform.position.x, min, max),
 			pos.y,

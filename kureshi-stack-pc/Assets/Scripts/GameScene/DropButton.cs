@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class DropButton : MonoBehaviour {
 
+	private void Update() {
+		if(Input.GetKeyDown("return")) {
+			OnClick();
+		}
+	}
+
 	/**
 	 * UserTimeを0以下にすれば
 	 * UserPhaseなら落下
